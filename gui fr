@@ -1,0 +1,84 @@
+local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Rayfield/main/source"))();
+local Window = Rayfield:CreateWindow({Name="the blod",LoadingTitle="Blood gui",LoadingSubtitle="By Someone on V3rmillion 👍👍👍👍👍"});
+local Tab = Window:CreateTab("Click&Collect Things");
+local Button = Tab:CreateButton({Name="Collect Printers Money",Callback=function()
+	for i, v in pairs(game:GetService("Workspace").Plants:GetDescendants()) do
+		if v:FindFirstChild("ClickDetector") then
+			fireclickdetector(v.ClickDetector, 50);
+		end
+	end
+end});
+local Button = Tab:CreateButton({Name="Collect Spawned Cash (wait for them to respawn)",Callback=function()
+	for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+		if (v.Name == "money") then
+			fireclickdetector(v.ClickDetector, 50);
+		end
+	end
+end});
+local Tab = Window:CreateTab("ATM Stuff");
+local Input = Tab:CreateInput({Name="Withdraw",PlaceholderText="Number",RemoveTextAfterFocusLost=true,Callback=function(Text)
+	game:GetService("ReplicatedStorage").ATM:FireServer("Withdraw", tonumber(Text));
+end});
+local Input = Tab:CreateInput({Name="Deposit",PlaceholderText="Number",RemoveTextAfterFocusLost=true,Callback=function(Text)
+	game:GetService("ReplicatedStorage").ATM:FireServer("Deposit", tonumber(Text));
+end});
+local Button = Tab:CreateButton({Name="Check Money (In your ATM)",Callback=function()
+	Rayfield:Notify({Title="Money!!",Content=game:GetService("Players").LocalPlayer.Bank.Value,Duration=3,Image=4483362458});
+end});
+local Tab = Window:CreateTab("Money Farm Stuff");
+local Button = Tab:CreateButton({Name="Crypto Miner (25k)",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops.CryptoMiner.ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Big Money Printer (10k)",Callback=function()
+	game:GetService("ReplicatedStorage").Buy:FireServer("bigmoneyprinter", 10000);
+end});
+local Button = Tab:CreateButton({Name="Printer Battery(200)",Callback=function()
+	game:GetService("ReplicatedStorage").Buy:FireServer("PRINTER_BATTERY", 200);
+end});
+local Tab = Window:CreateTab("Buy Armors");
+local Button = Tab:CreateButton({Name="Sniper Armor (1.5k)",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops["Basic Armor"].ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Basic Armor (2k)",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops["Basic Armor"].ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Gas Mask Armor (5k)",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops["Gas Mask Armor"].ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Tachanka (50k)",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops.Tachanka.ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Heavy Armor (70k)",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops["Heavy Armor"].ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="JUGGERNAUT (3M)",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops.Juggernaut.ClickDetector);
+end});
+local Tab = Window:CreateTab("Map Shop Stuff");
+local Button = Tab:CreateButton({Name="Upg Revolver",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops.CheaperBetterRevolver.ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Flamethrower",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops.Flamethrower.ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Upg DB",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops["Upgraded Double Barrel"].ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="M16",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops.M16.ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Honey Bad'r",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops["Honey Badger"].ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Tact Shotgun",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops["Tactical Shotgun"].ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Reviver",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops.Reviver.ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Anti Regen (cheaper than gui shop)",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops["Anti Regen"].ClickDetector);
+end});
+local Button = Tab:CreateButton({Name="Virus Inject (x2 Cheaper)",Callback=function()
+	fireclickdetector(game:GetService("Workspace").Shops["Virus Inject"].ClickDetector);
+end});
